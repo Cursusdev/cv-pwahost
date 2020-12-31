@@ -177,6 +177,7 @@ button.accordion.text-form p {
 }
 .profile-picture img {
   width: 300px;
+  height: auto;
   border-radius: 50%;
 }
 .cv-intro span {

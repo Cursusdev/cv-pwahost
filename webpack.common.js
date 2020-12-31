@@ -158,6 +158,10 @@ module.exports = {
           from: './favicons',
           to: 'favicons',
         },
+        {
+          from: './robots.txt',
+          to: 'robots.txt',
+        }
       ]
     })
   ]
