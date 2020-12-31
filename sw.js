@@ -1,5 +1,4 @@
 //This is the service worker with the Advanced caching
-
 const CACHE = "cache-v2";
 const debug = false;
 

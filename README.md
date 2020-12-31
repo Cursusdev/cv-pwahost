@@ -43,4 +43,4 @@ $ git push -u origin master
 // The ./dist folder is ok.  
 // $ firebase login:ci  
 // $ firebase init  
-$ yarn deploy 
+$ yarn deploy  

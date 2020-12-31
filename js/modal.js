@@ -1,5 +1,5 @@
 // Get Modal
-export function modal() {
+function modal() {
   const modal = window.document.getElementsByClassName('modal')
 
   if (modal.length > 0) {
@@ -58,4 +58,4 @@ export function modal() {
     }
   }
 }
-// modal()
+modal()
