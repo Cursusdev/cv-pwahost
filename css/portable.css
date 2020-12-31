@@ -1,0 +1,252 @@
+@media screen and (max-device-width: 410px) {
+  /* ---------------------- GENERAL ---------------------- */
+  section .heading h2 {
+    font-size: 1.2em;
+  }
+  #experience .heading h2 {
+    margin-bottom: 3em;
+  }
+  #training .heading h2 {
+    margin-bottom: 2em;
+  }
+  #about .heading p {
+    margin-bottom: 2em;
+  }
+  #asset .heading p {
+    margin-bottom: 1em;
+  }
+  section {
+    font-size: .9em;
+  }
+  #motivation,
+  #about-job,
+  #about-btp,
+  #training,
+  #asset,
+  #portfolio {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* ------------------- HEADER LINK ------------------- */
+  #cv-link h1 {
+    width: 90vw;
+  }
+  .hello {
+    margin: 1em auto;
+    width: 65vw;
+  }
+  .span-title {
+    display: block;
+    font-size: 1em;
+    color: #000;
+    margin: 1em auto;
+    margin-bottom: 1em;
+    width: 65vw;
+  }
+  .span-title:nth-child(2n) {
+    width: 15vw;
+  }
+  .cv-badge {
+    font-size: 1em;
+    width: 80vw;
+    margin: 1.3em 2.5vw 2em 2.5vw;
+  }
+  .cv-bar a > p {
+    font-size: 1.1em;
+  }
+
+  /* --------------------- MENU ------------------------ */
+  .div-nav.active {
+    margin-top: 0;
+  }
+  .profil-box img {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  /* -------------------- ABOUT ------------------------ */
+  /* ------------------ ABOUT JOB ---------------------- */
+  /* -------------------- MOTIVATION ------------------- */
+  #about-job .heading p:first-child {
+    color: #000;
+  }
+  main .cv-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .container .heading h2 {
+    font-size: 1.3em;
+  }
+  .container .cv-dev p {
+    color: #fff,
+  }
+  .job {
+    padding: 1em;
+  }
+  .cv-btp ul,
+  .cv-dev ul,
+  .job-box-i ul {
+    padding: 0;
+    margin-left: 0;
+  }
+  .cv-btp li,
+  .cv-dev li,
+  .job-box-i li {
+    margin-right: 0;
+  }
+  .cv-head {
+    margin: 0;
+  }
+  .cv-head div:last-child {
+    margin-bottom: 0;
+  }
+  .cv-head div > a {
+    margin: 0 1em 1em 1em;
+  }
+  /* ---------------------- STUDIES --------------------- */
+  #studies .heading {
+    margin-bottom: 1em;
+  }
+  /* ---------------------- SKILLS --------------------- */
+  #skills {
+    padding: 30px 0 0 0;
+  }
+  #skills .heading {
+    padding-bottom: .5em;
+  }
+  .row-progress {
+    margin-bottom: 0;
+  }
+  .row-progress div {
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  #skills .slides {
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 0;
+  }
+  #skills .slide {
+    padding: 0;
+    margin: 0 18px 0 18px;
+  }
+  .slide h3 {
+    font-size: 1.3em;
+  }
+  .slide div.words {
+    padding: 0 0 1.1em 0;
+    margin: 0 auto;
+  }
+  .words span {
+    padding: .5em;
+    line-height: 2.5em;
+  }
+
+  /* -------------------- EXPERIENCE --------------------- */
+  ul.timeline {
+    margin-left: -5px;
+  }
+  .timeline li > div.timeline-badge {
+    top: 10px;
+    left: 98%;
+  }
+  .timeline-panel-container, .timeline-panel-container-inverted {
+    width: 88%;
+    float: left;
+  }
+  .timeline-panel:after {
+    top: 12px;
+    right: -10px;
+  }
+  .timeline .timeline-panel-container-inverted .timeline-panel:after {
+    left: 98%;
+  }
+  .timeline-panel {
+    padding: 6px;
+  }
+  .timeline-heading h3 {
+    margin: 0;
+  }
+  .timeline-heading h4 {
+    margin: 2px;
+  }
+  .text-muted {
+    margin: 5px 0 0 0;
+  }
+  .timeline-body {
+    text-align: justify;
+  }
+
+  /* -------------------- ASSET --------------------- */
+  #asset {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  section .heading {
+    padding: 0;
+  }
+  .job-box p {
+    margin-left: 10px;
+  }
+  .job-box ul {
+    margin-left: 30px;
+  }
+  .dev {
+    margin: 0;
+  }
+  .dev ul {
+    margin: 0;
+  }
+  .job li {
+    min-width: 60%;
+  }
+
+  /* ------------------ PORTFOLIO ------------------- */
+  /* portfolio btp */
+  .row-folio-btp #imgsrc_7,
+  .row-folio-btp #imgsrc_6,
+  .row-folio-btp #imgsrc_5,
+  .row-folio-btp #imgsrc_4,
+  .row-folio-btp #imgsrc_3,
+  .row-folio-btp #imgsrc_2,
+  .row-folio-btp #imgsrc_1,
+  .row-folio-btp #imgsrc_0 {
+    width: 91.5vw;
+  }
+  .row-folio-btp #imgsrc_0 {
+    height: 52vw;
+  }
+  .row-folio-btp #imgsrc_1 {
+    height: 61vw;
+  }
+  .row-folio-btp #imgsrc_2 {
+    height: 50.5vw;
+  }
+  .row-folio-btp #imgsrc_3 {
+    height: 68.5vw;
+  }
+  .row-folio-btp #imgsrc_4 {
+    height: 91.5vw;
+  }
+  .row-folio-btp #imgsrc_5 {
+    height: 69.5vw;
+  }
+  .row-folio-btp #imgsrc_6 {
+    height: 69.5vw;
+  }
+  .row-folio-btp #imgsrc_7 {
+    height: 122.5vw;
+  }
+  .folio-dev img {
+    max-width: 90vw;
+  }
+  .txt-folio {
+    max-width: 95vw;
+  }
+  .txt-folio p {
+    width: 100vw;
+    font-size: 1.1em;
+    text-align: center;
+  }
+}

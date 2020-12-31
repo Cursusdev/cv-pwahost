@@ -1,0 +1,12 @@
+/* lato-regular - latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lato Regular'), local('Lato-Regular'),
+       url('../font/lato-v16-latin-regular.woff2') format('woff2'); 
+       /* Super Modern Browsers */
+  font-display: swap;
+}
+/* @import url('https://fonts.googleapis.com/css?family=Lato&display=swap'); */
+/* @import url('https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXiWtFCc.woff2'); */

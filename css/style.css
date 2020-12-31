@@ -1,0 +1,118 @@
+/* -----------------------GENERAL----------------------- */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Lato', 'Arial', 'sans-serif';
+  font-size: 16px;
+  margin: 0;
+}
+#top {
+  padding: 0;
+  margin: 0;
+}
+section {
+  padding: 45px 0 45px 0;
+}
+.red-divider {
+  width: 100px;
+  height: 2px;
+  background: #bf5915;
+  margin: 0 auto 15px;
+}
+.white-divider {
+  width: 100px;
+  height: 2px;
+  background: #f5f5f5;
+  margin: 0 auto 15px;
+}
+#btp-job .heading h2,
+#studies .heading h2,
+#skills .heading h2,
+#asset .heading h2,
+#training .heading h2,
+#portfolio .heading h2 {
+  color: #bf5915;
+  text-transform: uppercase;
+}
+#about-btp .heading h2,
+#asset .heading h2,
+#dev-job .heading h2,
+#experience .heading h2,
+#asset .heading h2,
+#contacts .heading h2 {
+  color: #f5f5f5;
+  text-transform: uppercase;
+}
+#about-btp .heading p,
+#btp-job .heading p,
+#skills .heading p,
+#training .heading p,
+#portfolio .heading p,
+#asset .heading p,
+#studies .heading p,
+#experience .heading p,
+#asset .heading p,
+#contacts .heading p {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #141414;
+}
+#dev-job .heading p,
+#about .heading p {
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #000;
+}
+.heading a:link {
+  text-decoration: none;
+}
+.heading a:active {
+  text-decoration: none;
+}
+section .heading {
+  font-size: 1em;
+  text-align: center;
+  padding-bottom: 30px;
+}
+ul, ol {
+  list-style: none;
+}
+a.glyphicon:link {
+  text-decoration: none;
+}
+#about, #dev-job, #about-btp, #asset, #experience, #cv-link, #contacts {
+  background: #bf5915;
+}
+#btp-job, #studies, #skills, #training, #portfolio {
+  background: #f5f5f5;
+}
+.container {
+  text-align: center;
+  margin: 0;
+}
+html, head, body, header, main, section, nav, h1, h2, h3, h4, div, ul, li, figure, a {
+  box-sizing: border-box;
+}
+h4 {
+  white-space: pre-wrap;
+}
+
+/* --------------------- BACKGROUND IMG -------------------- */
+header {
+  background-image: url('../img/palmier-mer_800w600h.webp');
+  /* background-image: url('../img/palmier-mer_700w525h.jpg'); */
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+/* ----------------------- FALLBACK ----------------------- */
+#fallback {
+  text-align: center;
+  margin-top: 70px;
+}

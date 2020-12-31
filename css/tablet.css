@@ -1,0 +1,195 @@
+@media screen and (max-device-width: 900px) {
+  /* porfolio BTP */
+  .row-folio-btp {
+    max-width: 80%;
+    flex-direction: column;
+  }
+  .col-2 {
+    width: 100%;
+  }
+  .photo img {
+    max-width: 100%;
+    border-image-source: none;
+  }
+  .col-4 {
+    width: 100%;
+  }
+}
+@media screen and (max-device-width: 800px) {
+  /* ---------------------- GENERAL ---------------------- */
+
+  /* POPUPS */
+  .cv-popup-1 a span {
+    font-size: .9em;
+    margin-top: 55px;
+    margin-left: -100px;
+  }
+
+  /* ------------------- HEADER LINKS -------------------- */
+  .cv-link {
+    margin: 0 0 1.5em 0;
+  }
+  .cv-icon img {
+    width: 55px;
+    height: 25px;
+  }
+  .span-title {
+    display: block;
+    font-size: 1em;
+    color: #000;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    width: 35vw;
+  }
+  .span-title:nth-child(2n) {
+    width: 5vw;
+  }
+
+  /* ----------------------- ABOUT ----------------------- */
+  .profile-picture img {
+    width: 300px;
+    height: auto;
+  }
+  main .cv-box {
+    padding: 1em;
+  }
+  .icon-dev img,
+  .icon-pro img {
+    margin: .5em;
+    padding: 2em auto;
+  }
+
+  /* ----------------------- SKILLS ---------------------- */
+  .row-progress div {
+    max-width: 85%;
+  }
+  .content .slides {
+    margin-top: 0;
+  }
+  .content .slide {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  /* -------------------- EXPERIENCE --------------------- */
+  #experience {
+    background: #bf5915;
+  }
+  .timeline {
+    padding: 20px 0;
+    margin: 0 auto;
+  }
+  ul.timeline:before {
+    left: 99%;
+  }
+  .timeline li > div.timeline-badge {
+    left: 99%;
+  }
+  .timeline-panel-container, .timeline-panel-container-inverted {
+    width: 91%;
+    float: left;
+  }
+  .timeline-panel {
+    position: relative;
+    width: 95%;
+    float: right;
+    margin: 0;
+    border: 1px solid #d4d4d4;
+    border-radius : 7px;
+    box-shadow: 0 1px 6px rgba(0,0,0, 0.175);
+    background: #fff;
+  }
+   .timeline-body ul {
+    padding: 0 0 0 15px;
+  }
+  .timeline-body ul > li {
+    margin: 10px;
+    list-style: square;
+  }
+  .timeline > .li-left:after {
+    clear: both;
+  }
+  .timeline > .li-right:after {
+    clear: both;
+  }
+  .timeline-panel-container-inverted .timeline-panel {
+    position: relative;
+    width: 95%;
+    float: right;
+    margin: 0;
+    border: 1px solid #d4d4d4;
+    border-radius : 7px;
+    box-shadow: 0 1px 6px rgba(0,0,0, 0.175);
+    background: #fff;
+  }
+  .timeline-panel:after {
+    position: absolute;
+    right: -2%;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " ";
+  }
+  .timeline-panel-container-inverted .timeline-panel:after {
+    border-left-width: 16px;
+    border-right-width: 0;
+    left: 99%;
+  }
+  .text-muted {
+    color: #000;
+  }
+  .tl-btp > .li-right:last-child,
+  .tl-btp > .li-left:last-child {
+    min-height: 0;
+  }
+
+  /* -------------------- TRAINING --------------------- */
+  #training {
+    background: #fff;
+  }
+  .training-block h5 {
+    color: #000;
+    font-size: 0.9em;
+  }
+  .training-block p {
+    max-width: 65vw;
+    font-size: 0.9em;
+  }
+  a.form-control {
+    background: #ddd;
+    border: 2px solid #bf5915;
+    width: 70px;
+    margin: 4px;
+  }
+  a.form-control:link {
+    color: #bf5915;
+  }
+  a.form-control:visited {
+    color: #bf5915;
+  }
+  .accordion {
+    max-width: 70vw;
+  }
+  .accordion p {
+    max-width: 65vw;
+  }
+
+  /* ----------------------- ASSET ----------------------- */
+  .job-box ul {
+    min-width: 80vw;
+  }
+  .job-box p,
+  .job-box ul {
+    max-width: 100vw;
+   }
+  .job-box-i ul,
+  .cv-dev ul {
+    margin: 5vw 10vw 0 10vw;
+    padding: 0;
+  }
+  .job {
+    margin-bottom: 0;
+  }
+}
