@@ -147,6 +147,14 @@ module.exports = {
           to: 'apple-touch-icon.png',
         },
         {
+          from: './img/PerformCV_1200w630h.jpg',
+          to: './img/PerformCV_1200w630h.jpg',
+        },
+        {
+          from: './img/palmier-mer_800w600h.webp',
+          to: './img/palmier-mer_800w600h.webp',
+        },
+        {
           from: './404.html',
           to: '404.html',
         },

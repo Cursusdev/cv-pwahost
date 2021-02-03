@@ -110,7 +110,7 @@ function currentTab() {
     window.addEventListener('scroll', overview);
   // }
 };
-window.removeEventListener('scroll', scroll.onScroll)
-window.removeEventListener('rezize', scroll.reload)
 // adding an active class to the section overview
 currentTab();
+window.removeEventListener('scroll', scroll.onScroll)
+window.removeEventListener('rezize', scroll.reload)

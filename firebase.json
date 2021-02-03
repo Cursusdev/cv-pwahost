@@ -19,8 +19,7 @@
         { "key" : "X-Frame-Options", "value" : "deny" },
         { "key" : "X-XSS-Protection", "value" : "1; mode=block" },
         { "key": "Referrer-Policy", "value": "no-referrer-when-downgrade" },
-        { "key": "Cache-Control", "value": "no-cache" },
-        { "key": "Permissions-policy", "value": "geolocation=(self 'https://pwahost.xyz'), microphone=()" }
+        { "key": "Cache-Control", "value": "no-cache" }
       ]
     },
     {

@@ -3,14 +3,18 @@
   body {
     margin: 0;
   }
-  header h1 {
-    font-size: 1.3em;
+  .cv-header h1 {
+    font-size: 1em;
+    margin: .3em;
   }
   .heading h2 {
     font-size: 1.3m;
   }
 
   /* ----------------------- MENU ----------------------- */
+  .navbar {
+    font-size: 1em;
+  }
   .navbar-header {
     margin: 10px 20px 10px 20px;
     float: right;

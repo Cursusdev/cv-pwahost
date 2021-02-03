@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "cv-pwahost"
+    "default": "cv-host",
+    "cv-host": "cv-host-291115"
   }
 }

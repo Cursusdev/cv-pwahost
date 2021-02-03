@@ -6,7 +6,6 @@ function divBar() {
   let li
 
   const navbar = window.document.querySelector('.navbar-collapse')
-  // if (navbar != null) {
     const liNavbar = navbar.getElementsByTagName('li')
     arrLi = liNavbar
 
@@ -20,7 +19,6 @@ function divBar() {
       divNav.appendChild(aEl)
     }
     navbar.appendChild(divNav)
-  // }
 }
 divBar()
 
