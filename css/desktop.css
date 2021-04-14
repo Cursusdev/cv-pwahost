@@ -113,9 +113,14 @@ button.accordion.text-form p {
   margin: .4em 0 .4em 1em;
 }
 /* POPUPS */
+.cv-popup-2 a,
+.cv-popup-1 a {
+  text-decoration: none;
+}
 .cv-popup-5 a span,
 .cv-popup-4 a span,
 .cv-popup-3 a span,
+.cv-popup-2 a span,
 .cv-popup-1 a span {
   position: absolute;
   font-size: 0.9em;
@@ -133,6 +138,15 @@ button.accordion.text-form p {
 }
 .cv-popup-1 a > span {
   margin-left: -90px;
+}
+.cv-popup-2 a > span {
+  margin-top: -20px;
+}
+.cv-popup-2 a > span {
+  margin-left: -90px;
+}
+.cv-popup-2 a:first-child span {
+  margin-left: -140px;
 }
 .cv-popup-3 a > span {
   margin-top: 40px;
@@ -161,6 +175,8 @@ button.accordion.text-form p {
 .cv-popup-4 a:focus span,
 .cv-popup-3 a:hover span,
 .cv-popup-3 a:focus span,
+.cv-popup-2 a:hover span,
+.cv-popup-2 a:focus span,
 .cv-popup-1 a:hover span,
 .cv-popup-1 a:focus span {
   transform: scale(1) rotate(0);
@@ -238,7 +254,7 @@ button.accordion.text-form p {
   padding: 15px 0 18px 0;
 }
 .navbar-content li {
-  margin: 0;
+  margin: -2px 0 0 0;
 }
 .navbar-content li a {
   padding: 19px;

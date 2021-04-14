@@ -100,7 +100,7 @@
         </div>
         <div class="navbar-collapse">
           <ul class="navbar-content">
-            <li><a href="index.html"><img srcset="../assets/home-icon.svg 20w" sizes="20px" src="../assets/home-icon.svg" type="image/svg+xml" class="user-icon" alt="user-icon" width="20" height="20" /></li><!-- @whitespace
+            <li><a href="index.html"><img srcset="../assets/home-icon.svg 20w" sizes="20px" src="../assets/home-icon.svg" type="image/svg+xml" class="user-icon" alt="user-icon" width="20" height="20" /></a></li><!-- @whitespace
             --><li><a href="#about"><img srcset="../assets/user.svg 20w" sizes="20px" src="../assets/user.svg" type="image/svg+xml" class="user-icon" alt="user-icon" width="20" height="20" /></a></li><!-- @whitespace
             --><li><a href="#skills">Compétences</a></li><!-- @whitespace
             --><li><a href="#experience">Expérience</a></li><!-- @whitespace
@@ -117,13 +117,31 @@
           <div class="heading cv-title">
             <p>Développeur Web et Web mobile</p>
           </div>
-          <div class="icon-dev">
-            <img srcset="../img/javascript-logo_100w.png, ../img/javascript-logo_100w.png 2x" sizes="100vw" src="../img/javascript-logo_100w.png" alt="language web standard" width="70" height="70" />
-            <img srcset="../img/Visual_Studio_Code_icon_100w.png, ../img/Visual_Studio_Code_icon_100w.png 2x" sizes="80vw" src="../img/Visual_Studio_Code_icon_100w.png" alt="language web standard" width="70" height="70" />
-            <img srcset="../img/React-icon_100w.png, ../img/React-icon_100w.png 2x" sizes="100vw" src="../img/React-icon_100w.png" alt="language web standard" width="70" height="70" />
-            <img srcset="../img/GraphQL_Logo_100w.png, ../img/GraphQL_Logo_100w.png 2x" sizes="100vw" src="../img/GraphQL_Logo_100w.png" alt="language web standard" width="70" height="70" />
-            <img srcset="../img/docker-logo_100w.png, ../img/docker-logo_100w.png 2x" sizes="100vw" src="../img/docker-logo_100w.png" alt="language web standard" width="70" height="70" />
-            <img srcset="../img/social-icon-google-cloud_100w.png, ../img/social-icon-google-cloud_100w.png 2x" sizes="100vw" src="../img/social-icon-google-cloud_100w.png" alt="language web standard" width="70" height="70" />
+          <div class="icon-dev cv-popup-2">
+            <a href="https://www.w3.org/wiki/The_web_standards_model_-_HTML_CSS_and_JavaScript" title="Lien vers site Wiki: HTML-CSS-Javascript" rel="noreferrer">
+              <img srcset="../img/javascript-logo_100w.png, ../img/javascript-logo_100w.png 2x" sizes="100vw" src="../img/javascript-logo_100w.png" alt="language web standard" width="70" height="70" />
+              <span>HTML5/CSS3/Javascript</span>
+            </a>
+            <a href="https://code.visualstudio.com/" title="Lien vers site Visual Studio Code" rel="noreferrer">
+              <img srcset="../img/Visual_Studio_Code_icon_100w.png, ../img/Visual_Studio_Code_icon_100w.png 2x" sizes="80vw" src="../img/Visual_Studio_Code_icon_100w.png" alt="language web standard" width="70" height="70" />
+              <span>VSCode</span>
+            </a>
+            <a href="https://fr.reactjs.org/" title="Lien vers site React" rel="noreferrer">
+              <img srcset="../img/React-icon_100w.png, ../img/React-icon_100w.png 2x" sizes="100vw" src="../img/React-icon_100w.png" alt="language web standard" width="70" height="70" />
+              <span>React</span>
+            </a>
+            <a href="https://graphql.org/" title="Lien vers site GraphQL" rel="noreferrer">
+              <img srcset="../img/GraphQL_Logo_100w.png, ../img/GraphQL_Logo_100w.png 2x" sizes="100vw" src="../img/GraphQL_Logo_100w.png" alt="language web standard" width="70" height="70" />
+              <span>GraphQL</span>
+            </a>
+            <a href="https://www.docker.com/" title="Lien vers site Docker" rel="noreferrer">
+              <img srcset="../img/docker-logo_100w.png, ../img/docker-logo_100w.png 2x" sizes="100vw" src="../img/docker-logo_100w.png" alt="language web standard" width="70" height="70" />
+              <span>Docker</span>
+            </a>
+            <a href="https://cloud.google.com/?hl=fr" title="Lien vers site Google Cloud" rel="noreferrer">
+              <img srcset="../img/social-icon-google-cloud_100w.png, ../img/social-icon-google-cloud_100w.png 2x" sizes="100vw" src="../img/social-icon-google-cloud_100w.png" alt="language web standard" width="70" height="70" />
+              <span>Google Cloud</span>
+            </a>
           </div>
           <a href="https://storage.googleapis.com/cv-pwahost/CV_DWWM_Y.Goalen.pdf" class="upload-white" title="Curriculum vitae Développeur Web" target="_blank" rel="noreferrer">Visualiser CV Dev</a>
           <div class="qrcode-cv">
@@ -425,23 +443,33 @@
             <div class="txt-folio">
               <h3>Mes curriculum vitae professionnels</h3>
               <ul>
-                <li>Site static sans dépendance, écrit avec les languages HTML5, CSS et ECMAScript. Compilé avec Webpack pour le développement et la mise en production. Publié sur le <a href="https://github.com/Cursusdev/cv-pwahost" class="txt-link">dépôt Github</a></li>
+                <li>Site statique sans dépendance, écrit avec les languages HTML5, CSS et vanilla Javascript. Compilé avec Webpack pour le développement et la mise en production. Publié sur le <a href="https://github.com/Cursusdev/cv-pwahost" class="txt-link">dépôt Github</a></li>
                 <li>Audité avec l'outil Lighthouse, l'application est web progressive et possède un fondu entre les pages.</li>
                 <li>L'application peut s'installer sur le bureau et fonctionne en mode offline.</li>
                 <li>L'application possède un menu colant, des QRcodes, un timeline, du CSS accordion, des popups et des fenêtres modales.</li>
-                <li>Développement local sur Docker en déploiement continu sur Cloud Run via un déclencheur sur Github. Hébergé avec Firebase sur <a href="https://pwahost.xyz/" class="txt-link">https://pwahost.xyz/</a>.</li>
+                <li>Hébergé avec Firebase sur <a href="https://pwahost.xyz/" class="txt-link">https://pwahost.xyz/</a>.</li>
               </ul>
             </div>
           </div>
           <div class="row-folio-dev">
             <div class="txt-folio">
-              <h3>Wild Circus</h3>
+              <h3>React demo</h3>
               <ul>
-                <li>Site static sans dépendance écrit avec les languages HTML5, CSS et ECMAScript. Publié sur <a href="https://github.com/Cursusdev/circus" class="txt-link">dépôt Github</a>.</li>
-                <li>L'application a été réalisé et hébergé sur <a href="https://cursusdev.github.io/circus/" class="txt-link">https://cursusdev.github.io/circus/</a> pour décrocher un entretien à la Wild School de Marseille.</li>
-                <li>L'exercice consistait à réaliser un site responsive pour un cirque d'un client américain. Les besoins consistaient à utiliser des balises li pour effectuer le menu, réalisé une UI qui calcule le montant automatiquement en fonction du nombre de placez choisies par l'utilisateur et la police d'écriture et du texte en anglais était imposé.</li>
+                <li>Site statique écrit avec React simple page. Publié sur <a href="https://github.com/Cursusdev/react-demo" class="txt-link">dépôt Github</a>. L'application utilise les hooks et l'authentification de Firebase</li>
+                <li>L'application est une interface utilisateur associée à une aide subtile de son utilisation pour une authentification par email/password ou anonyme. Elle peut s'installer sur le bureau et fonctionne en mode offline, un mode sombre est proposé. L'aide fournit des informations précisses en temps réel correspondantes aux actions de son utilisateur.</li>
+                <li>Hébergé avec Firebase sur <a href="https://pwahost.xyz/" class="txt-link">https://pwahost.xyz/</a>.</li>
               </ul>
             </div>
+            <div class="folio-dev">
+              <a href="https://cursusdev.github.io/react-demo/">
+                <img data-srcset="../img/react-demo_600w460h.jpg, ../img/react-demo_600w460h.jpg 2x" data-sizes="100vw" src="../img/unknow.gif" class="lazy" data-src="../img/react-demo_600w460h.jpg" alt="Page web de vue react-demo" width="240" height="184" />
+                <noscript>
+                  <img srcset="../img/react-demo_600w460h.jpg 100w" sizes="100vw" src="../img/react-demo_600w460h.jpg" alt="Page web de vue react-demo" width="240" height="184" />
+                </noscript>
+              </a>
+            </div>
+          </div>
+          <div class="row-folio-dev">
             <div class="folio-dev">
               <a href="https://cursusdev.github.io/circus/">
                 <img data-srcset="../img/Circus_600w460h.jpg, ../img/Circus_600w460h.jpg 2x" data-sizes="100vw" src="../img/unknow.gif" class="lazy" data-src="../img/Circus_600w460h.jpg" alt="Page web de vue cursusdev/circus" width="240" height="184" />
@@ -449,6 +477,14 @@
                   <img srcset="../img/Circus_600w460h.jpg 100w" sizes="100vw" src="../img/Circus_600w460h.jpg" alt="Page web de vue cursusdev/circus" width="240" height="184" />
                 </noscript>
               </a>
+            </div>
+            <div class="txt-folio">
+              <h3>Wild Circus</h3>
+              <ul>
+                <li>Site statique sans dépendance écrit avec les languages HTML5, CSS et ECMAScript. Publié sur <a href="https://github.com/Cursusdev/circus" class="txt-link">dépôt Github</a>.</li>
+                <li>L'application a été réalisé et hébergé sur <a href="https://cursusdev.github.io/circus/" class="txt-link">https://cursusdev.github.io/circus/</a> pour décrocher un entretien à la Wild School de Marseille.</li>
+                <li>L'exercice consistait à réaliser un site responsive pour un cirque d'un client américain. Les besoins consistaient à utiliser des balises li pour effectuer le menu, réalisé une UI qui calcule le montant automatiquement en fonction du nombre de placez choisies par l'utilisateur et la police d'écriture et du texte en anglais était imposé.</li>
+              </ul>
             </div>
           </div>
         </div>
