@@ -1,27 +1,12 @@
-const OfflinePluginRuntime = require('offline-plugin/runtime');
-
 // Check compatibility for the browser we're running this in
 if ("serviceWorker" in navigator) {
-  if (OfflinePluginRuntime) {
-    OfflinePluginRuntime.install({
-      onUpdateReady: () => OfflinePluginRuntime.applyUpdate(),
-      onUpdated: () => window.location.reload(),
+  // Register the service worker
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then(function (reg) {
+      console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+    })
+    .catch(function (error) {
+      console.log('Service worker registration failed, error:', error);
     });
-  }
-  
-  if (navigator.serviceWorker.controller) {
-    console.log("[PWA Builder] active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("/sw.js", {
-        scope: "/"
-      })
-      .then(function (reg) {
-        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-      })
-      .catch(function (error) {
-        console.log('Service worker registration failed, error:', error);
-      });
-  }
 }

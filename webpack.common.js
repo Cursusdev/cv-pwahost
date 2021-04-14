@@ -1,6 +1,5 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ServiceWorkerWebpackPlugin = require('serviceworker-webpack-plugin');
 const imagemin = require('imagemin');
 const imageminWebp = require('imagemin-webp');
 
@@ -165,6 +164,10 @@ module.exports = {
         {
           from: './favicons',
           to: 'favicons',
+        },
+        {
+          from: './sw.js',
+          to: 'sw.js',
         },
         {
           from: './robots.txt',

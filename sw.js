@@ -7,15 +7,14 @@ const precacheFiles = [
   '/index.html',
   '/dev.html',
   '/pro.html',
-  // '/font/lato-v16-latin-regular.b4d2c4c39853ee244272c04999b230ba.woff2',
-  // '/img/palmier-mer_700w525h.355efaa7bfe5cd8219eb2f1844400dad.jpg',
-  // '/assets/click-icon.590a69cf32789dee9ff6c9693fa526f0.svg',
-  // '/assets/download-icon.c2b30e649451969e692be021955718bd.svg',
-  // '/assets/eye-icon.8e677bc44836b1e48e0a6671f3c5d9bc.svg',
-  // '/assets/home-icon.7a84d000c0f0a85179489ba9200e32b6.svg',
-  // '/assets/QRCode_CVdev_120w.c99c54fcdeaae55101ceab4fd4e59461.svg',
-  // '/assets/QRCode_CVpro_120w.6ff9a0d0704c3dcfc18d7d80137d0690.svg',
-  // '/assets/user.0d139b2408357d6d44a7f683b1991fc5.svg',
+  '/font/lato-v16-latin-regular.b4d2c4c39853ee244272c04999b230ba.woff2',
+  '/img/palmier-mer_800w600h.webp',
+  '/assets/click-icon.d722390058ff5176f8871696d3818eca.svg',
+  '/assets/eye-icon.2ad979ed6c9335efa94acfd555c4b678.svg',
+  '/assets/home-icon.c625b329aa84b2487a99a2e731963163.svg',
+  '/assets/QRCode_CVdev_120w.f55b3854116143bf9cd21bf02830bf9d.svg',
+  '/assets/QRCode_CVpro_120w.35ec69d24df9e24e23bf78d14fdacc5a.svg',
+  '/assets/user.ffee1467d8ddb6d8c7353c16f5d5e12a.svg',
   '/favicons/android-icon-36x36.png',
   '/favicons/android-icon-48x48.png',
   '/favicons/android-icon-72x72.png',
@@ -32,8 +31,10 @@ const precacheFiles = [
   '/favicons/apple-icon-144x144.png',
   '/favicons/apple-icon-152x152.png',
   '/favicons/apple-icon-180x180.png',
-  '/favicons/apple-icon.png',
   '/favicons/apple-icon-precomposed.png',
+  '/favicons/apple-icon.png',
+  '/favicons/apple-touch-icon-ipad.png',
+  '/favicons/apple-touch-icon-iphone4.png',
   '/favicons/favicon-16x16.png',
   '/favicons/favicon-32x32.png',
   '/favicons/favicon-96x96.png',
@@ -52,7 +53,7 @@ const precacheFiles = [
   '/sw.js'
 ];
 
-const offlineFallbackPage = './offline.html';
+const offlineFallbackPage = '/offline.html';
 
 const networkFirstPaths = [
   /* Add an array of regex of paths that should go network first */
@@ -95,7 +96,7 @@ self.addEventListener('install', function (event) {
         console.log('[PWA Builder] Caching pages during install');
 
       return cache.addAll(precacheFiles).then(function () {
-        if (offlineFallbackPage === 'fallback.html') {
+        if (offlineFallbackPage === 'offline.html') {
           return cache.add(new Response('', { status: 503, statusText: 'Service Unavailable' }));
         }
 
@@ -126,20 +127,23 @@ self.addEventListener('fetch', function (event) {
   }
 });
 
+
 function cacheFirstFetch(event) {
   event.respondWith(
     fromCache(event.request).then(
       function (response) {
         // The response was found in the cache so we responde with it and update the entry
+        event.waitUntil(
+          caches.match(event.request)
+            .then(function (response) {
+              return updateCache(event.request, response);
+            })
+        );
 
         // This is where we call the server to get the newest version of the
         // file to use the next time we show view
-        event.waitUntil(
-          fetch(event.request).then(function (response) {
-            return updateCache(event.request, response);
-          })
-        );
 
+        
         return response;
       },
       function () {
@@ -203,7 +207,11 @@ function fromCache(request) {
 function updateCache(request, response) {
   if (!comparePaths(request.url, avoidCachingPaths)) {
     return caches.open(CACHE).then(function (cache) {
-      return cache.put(request, response);
+      if (request.url.match("^(http|https)://")){
+        cache.put(request, response);
+      } else {
+        return;
+      }
     });
   }
 

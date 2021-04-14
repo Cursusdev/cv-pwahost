@@ -9,8 +9,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 const WebpackCssReplaceWebp = require('webpack-css-replace-images-to-webp');
 
-const NODE_ENV = process.env.NODE_ENV || 'production';
-
 
 module.exports = merge(common, {
   mode: 'production',
@@ -90,7 +88,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(NODE_ENV),
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new WebpackCssReplaceWebp(),
     new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),

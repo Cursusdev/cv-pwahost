@@ -1,9 +1,11 @@
 const path = require('path');
 const fs = require('fs');
 const common = require('./webpack.common');
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 module.exports = merge(common, {
   mode: 'development',
@@ -32,6 +34,9 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    }),
     new HtmlWebpackPlugin({
       template: './index.html',
     }),
