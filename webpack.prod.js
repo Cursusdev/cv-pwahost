@@ -6,7 +6,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
 const WebpackCssReplaceWebp = require('webpack-css-replace-images-to-webp');
 
 
@@ -75,14 +74,6 @@ module.exports = merge(common, {
           collapseWhitespace: true,
           removeComments: true
         },
-      }),
-      new OfflinePlugin({
-        version: '[hash]',
-        responseStrategy: 'network-first',
-        safeToUseOptionalCaches: true,
-        ServiceWorker: {
-          events: true,
-        }
       }),
     ],
   },

@@ -4,12 +4,13 @@
   "description": "curriculum-vitae",
   "main": "entry.js",
   "scripts": {
-    "start": "yarn prod && docker build -f Dockerfile -t cv-pwahost . && docker run --rm -d -p 8080:80/tcp cv-pwahost:latest",
-    "dev": "yarn build && webpack serve --mode development --config webpack.dev.js",
-    "prod": "yarn clean && set NODE_ENV=production && webpack --config webpack.prod.js",
-    "build": "yarn clean && set NODE_ENV=development && webpack --config webpack.dev.js",
+    "start": "yarn prod && docker build -f Dockerfile -t cv-pwahost . && docker run --name cv-pwahost --rm -d -p 8080:80/tcp cv-pwahost:latest",
+    "dev": "yarn build && webpack serve --mode development --config ./webpack.dev.js",
+    "prod": "yarn clean && set NODE_ENV=production && webpack --mode production --config ./webpack.prod.js",
+    "build": "yarn clean && set NODE_ENV=development && webpack --mode development --config ./webpack.dev.js",
     "clean": "rm -rf dist",
-    "deploy": "yarn prod && firebase deploy --debug --token \"$FIREBASE_TOKEN\"",
+    "deploy": "yarn prod && firebase deploy",
+    "deploy-cloud": "yarn prod && firebase deploy --debug --token \"$FIREBASE_TOKEN\"",
     "kill": "docker container rm -f $(docker ps --filter ancestor=cv-pwahost:latest -q) && docker rmi cv-pwahost"
   },
   "keywords": [],

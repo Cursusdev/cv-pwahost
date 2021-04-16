@@ -451,17 +451,17 @@ button.accordion.text-form p {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+.progress .progress-bar {
+  font-size: 1em;
+  font-weight: 500;
+  margin: 4px;
+  color: #000;
+}
 .progress-bar {
   background: #bf5915;
   padding: 4px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-}
-.progress span {
-  font-size: 1em;
-  font-weight: 500;
-  margin: 4px;
-  color: #000;
 }
 .item_0 {
   width: 90%;

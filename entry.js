@@ -15,4 +15,3 @@ import './js/commons';
 import './js/main';
 import './js/modal';
 import './js/lazy';
-// import './js/pwa';

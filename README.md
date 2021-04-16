@@ -27,7 +27,8 @@ $ docker build -t cv-pwahost .
 ## Reset image 
 $ docker rmi -f cv-pwahost 
 ## clean 
-$ docker container rm -f $(docker ps --filter ancestor=cv-pwahost:latest -q) && docker rmi cv-pwahost 
+$ docker container rm -f $(docker ps --filter ancestor=cv-pwahost:latest -q)  
+$ docker rmi cv-pwahost  
 
 # Release or hotfix via GCP 
 // required: 

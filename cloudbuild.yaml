@@ -7,4 +7,4 @@ steps:
     args: ['push', 'eu.gcr.io/$PROJECT_ID/cv-host:$SHORT_SHA']
   # Deploy to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta', 'run', 'deploy', 'cv-host-service', '--image=eu.gcr.io/$PROJECT_ID/cv-host:$SHORT_SHA', '--platform=managed', '--region=europe-west1']
+    args: ['beta', 'run', 'deploy', 'cv-host-service', '--image=eu.gcr.io/$PROJECT_ID/cv-host:$SHORT_SHA', '--platform=managed', '--region=europe-west3']
