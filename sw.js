@@ -1,5 +1,5 @@
 //This is the service worker with the Advanced caching
-const CACHE = 'cache-v3';
+const CACHE = 'cache-v5';
 const debug = false;
 
 const precacheFiles = [
@@ -45,6 +45,10 @@ const precacheFiles = [
   '/favicons/safari-pinned-tab.svg',
   '/offline.html',
   '/404.html',
+  '/criticalJS.c6af50fdc529559dab9f.js',
+  '/runtime.78a5b5084c00b620004f.js',
+  '/main.544ff4d28287f5741800.js',
+  '/main.6499f28f9e26005893f7.css',
   '/android-icon-144x144.png',
   '/apple-touch-icon.png',
   '/browserconfig.xml',
