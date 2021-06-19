@@ -1,5 +1,5 @@
 //This is the service worker with the Advanced caching
-const CACHE = 'cache-v5';
+const CACHE = 'cache-v6';
 const debug = false;
 
 const precacheFiles = [
@@ -7,12 +7,13 @@ const precacheFiles = [
   '/index.html',
   '/dev.html',
   '/pro.html',
+  '/chain.html',
   '/font/lato-v16-latin-regular.b4d2c4c39853ee244272c04999b230ba.woff2',
   '/img/palmier-mer_800w600h.webp',
   '/assets/click-icon.d722390058ff5176f8871696d3818eca.svg',
   '/assets/eye-icon.2ad979ed6c9335efa94acfd555c4b678.svg',
   '/assets/home-icon.c625b329aa84b2487a99a2e731963163.svg',
-  '/assets/QRCode_CVdev_120w.f55b3854116143bf9cd21bf02830bf9d.svg',
+  '/assets/QRCode_CVdev_120w.5fc8b79e33a0dddb1faf6b5c4dbafd4e.svg',
   '/assets/QRCode_CVpro_120w.35ec69d24df9e24e23bf78d14fdacc5a.svg',
   '/assets/user.ffee1467d8ddb6d8c7353c16f5d5e12a.svg',
   '/favicons/android-icon-36x36.png',

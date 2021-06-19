@@ -66,6 +66,16 @@ module.exports = merge(common, {
         },
       }),
       new HtmlWebpackPlugin({
+        title: 'CV Blockchain',
+        filename: 'chain.html',
+        template: './pages/chain.html',
+        minify: {
+          removeAttributeQuotes: true,
+          collapseWhitespace: true,
+          removeComments: true
+        },
+      }),
+      new HtmlWebpackPlugin({
         title: 'CV Projeteur',
         filename: 'pro.html',
         template: './pages/pro.html',

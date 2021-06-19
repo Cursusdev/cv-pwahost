@@ -45,6 +45,10 @@ module.exports = merge(common, {
       template: './pages/dev.html',
     }),
     new HtmlWebpackPlugin({
+      filename: 'chain.html',
+      template: './pages/chain.html',
+    }),
+    new HtmlWebpackPlugin({
       filename: 'pro.html',
       template: './pages/pro.html',
     }),
