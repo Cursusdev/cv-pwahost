@@ -1,13 +1,15 @@
-const path = require('path');
-const fs = require('fs');
-const common = require('./webpack.common');
-const webpack = require('webpack');
-const { merge } = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import webpack from 'webpack';
+import { merge } from 'webpack-merge';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { common } from './webpack.shared-config.js';
 
 
-module.exports = merge(common, {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default () => merge(common, {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   output: {
@@ -20,7 +22,7 @@ module.exports = merge(common, {
     host: '127.0.0.1',
     port: 8080,
     historyApiFallback: true,
-    contentBase: path.join(__dirname, 'dist'),
+    static: path.join(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -28,7 +30,12 @@ module.exports = merge(common, {
         test: /\.css$/,
         use: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              esModule: false,
+            },
+          },
         ],
       }
     ]

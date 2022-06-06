@@ -1,15 +1,19 @@
-const path = require('path');
-const common = require('./webpack.common');
-const { merge } = require('webpack-merge');
-const webpack = require('webpack');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WebpackCssReplaceWebp = require('webpack-css-replace-images-to-webp');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import webpack from 'webpack';
+import { merge } from 'webpack-merge';
+import { MiniCssExtractPlugin } from 'mini-css-extract-plugin';
+import { CssMinimizerPlugin } from 'css-minimizer-webpack-plugin';
+import { TerserPlugin } from 'terser-webpack-plugin';
+import { HtmlWebpackPlugin } from 'html-webpack-plugin';
+import { WebpackCssReplaceWebp } from 'webpack-css-replace-images-to-webp';
+import { common } from './webpack.shared-config.js';
 
 
-module.exports = merge(common, {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default () => merge(common, {
   mode: 'production',
   devtool: 'source-map',
   output: {
@@ -32,7 +36,7 @@ module.exports = merge(common, {
   optimization: {
     minimize: true,
     minimizer: [
-      new OptimizeCssAssetsPlugin({
+      new CssMinimizerPlugin({
         cssProcessorOptions: {
           map: {
             inline: false,

@@ -9,43 +9,43 @@
   "Scope": "/",
   "icons": [
     {
-      "src": "https://pwahost.xyz/favicons/android-icon-36x36.png",
+      "src": "https://onlinecvs.xyz/favicons/android-icon-36x36.png",
       "sizes": "36x36",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://pwahost.xyz/favicons/android-icon-48x48.png",
+      "src": "https://onlinecvs.xyz/favicons/android-icon-48x48.png",
       "sizes": "48x48",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://pwahost.xyz/favicons/android-icon-72x72.png",
+      "src": "https://onlinecvs.xyz/favicons/android-icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://pwahost.xyz/favicons/android-icon-96x96.png",
+      "src": "https://onlinecvs.xyz/favicons/android-icon-96x96.png",
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://pwahost.xyz/android-icon-144x144.png",
+      "src": "https://onlinecvs.xyz/android-icon-144x144.png",
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://pwahost.xyz/favicons/android-icon-192x192.png",
+      "src": "https://onlinecvs.xyz/favicons/android-icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "https://pwahost.xyz/favicons/android-icon-512x512.png",
+      "src": "https://onlinecvs.xyz/favicons/android-icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"

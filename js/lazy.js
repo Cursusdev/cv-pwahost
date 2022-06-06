@@ -8,7 +8,7 @@ function lazyLoad() {
       lazy = window.document.getElementsByClassName('lazy');
     }
     const lazyLoad = () => {
-      for(lazyIdx of lazy){
+      for(const lazyIdx of lazy){
         if(isInViewport(lazyIdx)){
           if (lazyIdx.getAttribute('data-srcset') && lazyIdx.getAttribute('data-sizes')){
             lazyIdx.srcset = lazyIdx.getAttribute('data-srcset');

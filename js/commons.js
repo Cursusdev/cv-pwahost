@@ -43,7 +43,7 @@ toggle()
 // Accordion
 function accordion() {
   const accordions = document.getElementsByClassName('accordion');
-  for (acc of accordions){
+  for (const acc of accordions){
     acc.onclick = function() {
       this.classList.toggle('is-open');
   

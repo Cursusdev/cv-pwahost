@@ -8,7 +8,7 @@ function faderPage() {
 
   window.document.addEventListener('DOMContentLoaded', () => {
     const anchors = document.getElementsByTagName('a');
-    for (anchor of anchors) {
+    for (const anchor of anchors) {
       if (anchor.hostname !== window.location.hostname || anchor.pathname === window.location.pathname) {
         continue;
       }

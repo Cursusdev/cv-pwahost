@@ -8,10 +8,10 @@ import './css/mobile.css';
 import './css/portable.css';
 
 // JS
-import(/* webpackChunkName: 'criticalJS', webpackPreload: true */ './js/critical');
-import './js/fader';
-import './js/main-sw';
-import './js/commons';
-import './js/main';
-import './js/modal';
-import './js/lazy';
+// import(/* webpackChunkName: 'criticalJS', webpackPreload: true */ './js/critical.js');
+import './js/fader.js';
+import './js/main-sw.js';
+import './js/commons.js';
+import './js/main.js';
+import './js/modal.js';
+import './js/lazy.js';

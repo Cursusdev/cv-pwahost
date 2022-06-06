@@ -1,5 +1,5 @@
 //This is the service worker with the Advanced caching
-const CACHE = 'cache-v6';
+const CACHE = 'cache-v0';
 const debug = false;
 
 const precacheFiles = [
@@ -8,14 +8,14 @@ const precacheFiles = [
   '/dev.html',
   '/pro.html',
   '/chain.html',
-  '/font/lato-v16-latin-regular.b4d2c4c39853ee244272c04999b230ba.woff2',
+  '/font/lato-v16-latin-regular.65e877e527022735c1a1bf5ae6183cf6.woff2',
   '/img/palmier-mer_800w600h.webp',
-  '/assets/click-icon.d722390058ff5176f8871696d3818eca.svg',
-  '/assets/eye-icon.2ad979ed6c9335efa94acfd555c4b678.svg',
-  '/assets/home-icon.c625b329aa84b2487a99a2e731963163.svg',
-  '/assets/QRCode_CVdev_120w.5fc8b79e33a0dddb1faf6b5c4dbafd4e.svg',
-  '/assets/QRCode_CVpro_120w.35ec69d24df9e24e23bf78d14fdacc5a.svg',
-  '/assets/user.ffee1467d8ddb6d8c7353c16f5d5e12a.svg',
+  '/assets/clock-icon.71e69e00c1d035dd5f5b508517032350.svg',
+  '/assets/eye-icon.140cf09c2e747fea889e58818c6e0dc6.svg',
+  '/assets/home-icon.2b426ebf32d763e83b55b8fee6cd40f1.svg',
+  '/assets/QRCode_CVdev_120w.6459706b74f033afd28acede83d07b21.svg',
+  '/assets/QRCode_CVpro_120w.af3ef028d6b0159e72821a49f05740f8.svg',
+  '/assets/user.83c7f8d9da2cbaa0b04f211327d38086.svg',
   '/favicons/android-icon-36x36.png',
   '/favicons/android-icon-48x48.png',
   '/favicons/android-icon-72x72.png',

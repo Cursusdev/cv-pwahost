@@ -1,18 +1,12 @@
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const imagemin = require('imagemin');
-const imageminWebp = require('imagemin-webp');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 
-(async () => {
-  const inputPath = path.join(__dirname, './img/*.jpg');
-  const files = await imagemin([inputPath], {
-    destination: path.join(__dirname, './dist/img'),
-    plugins: [imageminWebp({quality: 50})],
-  });
-})();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-module.exports = {
+export const common = {
   entry: {
     main: path.join(__dirname, './entry.js'),
   },
@@ -49,6 +43,7 @@ module.exports = {
             options: {
               name: '[name].[contenthash].[ext]',
               outputPath: 'img',
+              esModule: false,
             }
           },
         ]
@@ -64,6 +59,7 @@ module.exports = {
             options: {
               name: '[name].[contenthash].[ext]',
               outputPath: 'img',
+              esModule: false,
             }
           },
           {
@@ -93,6 +89,7 @@ module.exports = {
           options: {
             name: '[name].[contenthash].[ext]',
             outputPath: 'assets',
+            esModule: false,
           }
         }
       },
@@ -122,7 +119,6 @@ module.exports = {
     },
   },
   plugins: [
-
     new CopyWebpackPlugin({
       patterns: [
         {
