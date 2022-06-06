@@ -2,11 +2,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
-import { MiniCssExtractPlugin } from 'mini-css-extract-plugin';
-import { CssMinimizerPlugin } from 'css-minimizer-webpack-plugin';
-import { TerserPlugin } from 'terser-webpack-plugin';
-import { HtmlWebpackPlugin } from 'html-webpack-plugin';
-import { WebpackCssReplaceWebp } from 'webpack-css-replace-images-to-webp';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WebpackCssReplaceWebp from 'webpack-css-replace-images-to-webp';
 import { common } from './webpack.shared-config.js';
 
 
@@ -18,8 +18,8 @@ export default () => merge(common, {
   devtool: 'source-map',
   output: {
     publicPath: '/',
-    filename: '[name].[contentHash].js',
-    chunkFilename: '[name].[contentHash].js',
+    filename: '[name].[contenthash].js',
+    chunkFilename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
@@ -28,7 +28,13 @@ export default () => merge(common, {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              esModule: false,
+            }
+          },
         ]
       }
     ]
@@ -37,18 +43,23 @@ export default () => merge(common, {
     minimize: true,
     minimizer: [
       new CssMinimizerPlugin({
-        cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
-          },
+        minimizerOptions: {
+          preset: [
+            "default",
+            {
+              discardComments: { removeAll: true },
+            },
+          ],
         },
       }),
-      new TerserPlugin({
-        parallel: true,
-        cache: true,
-        sourceMap: true,
-      }),
+      (compiler) => {
+        new TerserPlugin({
+          terserOptions: {
+            compress: {},
+          },
+          extractComments: true,
+        }).apply(compiler);
+      },
       new HtmlWebpackPlugin({
         title: 'CV Index',
         filename: 'index.html',
@@ -96,6 +107,6 @@ export default () => merge(common, {
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new WebpackCssReplaceWebp(),
-    new MiniCssExtractPlugin({ filename: '[name].[contentHash].css' }),
+    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
   ],
 });
