@@ -67,6 +67,10 @@
 .accordion-content ul li {
   padding: 5px;
 }
+.accordion-content p > a {
+  padding: 0;
+  margin: 0;
+}
 button.accordion {
   width: 100%;
   background-color: #ddd;
