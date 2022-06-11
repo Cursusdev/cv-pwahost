@@ -219,6 +219,9 @@
     margin: 0;
     padding: 0;
   }
+  .timeline li {
+    padding: 0;
+  }
   .timeline li > div.timeline-badge {
     background-color: #ddd;
     width: 35px;

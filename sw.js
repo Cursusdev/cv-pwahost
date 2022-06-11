@@ -1,5 +1,5 @@
 //This is the service worker with the Advanced caching
-const CACHE = 'cache-v0';
+const CACHE = 'cache-v1';
 const debug = false;
 
 const precacheFiles = [
