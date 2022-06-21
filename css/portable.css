@@ -52,11 +52,11 @@
     width: 65vw;
   }
   .span-title:nth-child(2n) {
-    width: 15vw;
+    width: 65vw;
   }
   .cv-badge {
     font-size: 1em;
-    width: 80vw;
+    width: 30vw;
     margin: 1.3em 2.5vw 2em 2.5vw;
   }
   .cv-bar a > p {
