@@ -81,7 +81,7 @@ export default () => merge(common, {
         },
       }),
       new HtmlWebpackPlugin({
-        title: 'CV Blockchain',
+        title: 'CV Web3',
         filename: 'chain.html',
         template: './pages/chain.html',
         minify: {

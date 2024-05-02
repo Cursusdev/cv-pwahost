@@ -48,7 +48,7 @@ const precacheFiles = [
   '/404.html',
   '/runtime.ca14f768d44359e9ecd4.js',
   '/main.0a1145347a495ecbaf98.js',
-  '/main.e7dde71c98c6b1000c91.css',
+  '/main.8d01054ee6dbd0079f2c.css',
   '/android-icon-144x144.png',
   '/apple-touch-icon.png',
   '/browserconfig.xml',
