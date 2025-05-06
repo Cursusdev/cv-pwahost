@@ -59,8 +59,15 @@
     width: 30vw;
     margin: 1.3em 2.5vw 2em 2.5vw;
   }
+  .cv-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 1em;
+  }
   .cv-bar a > p {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
   /* --------------------- MENU ------------------------ */

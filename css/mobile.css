@@ -13,11 +13,13 @@
 
   /* ----------------------- MENU ----------------------- */
   .navbar {
+    width: 100%;
     font-size: 1em;
   }
   .navbar-header {
+    position: absolute;
     margin: 10px 20px 10px 20px;
-    float: right;
+    z-index: 2;
   }
   .navbar-header button {
     background-color: #bf5915;
