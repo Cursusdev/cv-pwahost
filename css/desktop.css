@@ -294,8 +294,8 @@ button.accordion.text-form p {
   border-radius: .5em;
   transition: all 0.3s ease-in 0s;
   margin-right: 1em;
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 270px;
+  max-width: 270px;
 }
 .upload-white {
   background-color: #bf5915;
@@ -715,9 +715,22 @@ button.accordion.text-form p {
   margin-top: 1em;
 
 }
-.img-rigth img:nth-child(2n) {
-  float: right;
-  margin-top: -1.4em;
+/* Parti agent-tools (#393) : le logo etait un `float: right` + `margin-top: -1.4em`.
+   Un float qui ne tient pas sur sa ligne bascule a la suivante EN EMPORTANT sa marge
+   negative — mesure : « 2024/2026 (bêta privée) » depassait de 5px et decalait le logo
+   de 21px. En item flex, la longueur du texte ne peut plus le deplacer.
+   Les marges verticales negatives conservent le debordement d'origine : sans elles le
+   paragraphe grandirait a la hauteur du logo (60px) et pousserait tout le bloc. */
+.img-rigth .text-muted {
+  display: flex;
+  align-items: flex-start;
+}
+.img-rigth .text-muted img:nth-child(2n) {
+  float: none;
+  flex: 0 0 auto;
+  margin-left: auto;
+  margin-top: -20px;
+  margin-bottom: -20px;
 }
 .img-middle img {
   margin: 0 auto;

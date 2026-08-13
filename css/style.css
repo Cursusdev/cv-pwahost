@@ -117,3 +117,40 @@ header {
   text-align: center;
   margin-top: 70px;
 }
+
+/* Libelle visible sous les icones menant aux pages HTML (web2 / web3 / btp).
+   Balise <em> et non <span> : dans cette zone les <span> sont des bulles au survol
+   (position:absolute, opacity 0 hors :hover) — un span serait resté invisible.
+   Forme volontairement minimale : agent-tools tranche la presentation finale. */
+.cv-link .cv-bar > div > a {
+  display: inline-block;
+  vertical-align: top;
+}
+.cv-tag {
+  display: block;
+  font-style: normal;
+  font-size: .75em;
+  margin-top: .25em;
+  color: #000;
+}
+
+
+/* #dev-job — ecarts EGAUX entre les boutons, groupe CENTRE (jamais etale).
+   Cause mesuree du defaut : `.cv-head a:first-child` pose un `margin-right: 1em` sur le
+   SEUL premier bouton, pendant que `.cv-head a { margin: 0 auto }` annule la marge des
+   autres. D'ou 19px apres le 1er bouton et ~3px (blanc inter-elements) apres le 2e.
+   On neutralise les marges DANS cette zone et on confie l'espacement a `gap`, qui est
+   uniforme par construction. `align-items: stretch` prepare la regle de hauteurs
+   d'agent-tools (#373) sans la prejuger. Portee limitee a .cv-actions : #btp-job intact. */
+.cv-head .cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1em;
+}
+.cv-head .cv-actions a,
+.cv-head .cv-actions a:first-child,
+.cv-head .cv-actions a:last-child {
+  margin: 0;
+}

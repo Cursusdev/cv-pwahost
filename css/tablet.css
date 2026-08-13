@@ -41,8 +41,11 @@
     margin-bottom: 1em;
     width: 35vw;
   }
+  /* Meme largeur que les span-title impairs : le 5vw ecrasait le 2e span de la banniere
+     (seul element en position paire du site) a ~40px, texte deborde hors de sa pastille.
+     portable.css applique deja cette egalisation ; tablet.css etait le seul ecart. */
   .span-title:nth-child(2n) {
-    width: 5vw;
+    width: 35vw;
   }
 
   /* ----------------------- ABOUT ----------------------- */
