@@ -22,7 +22,7 @@ function modal() {
     function done(id) {
       // Modals lazy load
       const lazyModal = list => {
-        for(tag of list) {
+        for(const tag of list) {
           let img = tag.getElementsByClassName('lazy_load')
           img[0].setAttribute('src', img[0].dataset.src)
           img[0].setAttribute('srcset', img[0].dataset.srcset)
@@ -35,7 +35,7 @@ function modal() {
       let img0 = window.document.getElementById(`imgsrc_${id}`)
 
       preview0.setAttribute('src', img0.getAttribute('data-src'))
-      preview0.setAttribute('srcset', img0.getAttribute('data-srcet'))
+      preview0.setAttribute('srcset', img0.getAttribute('data-srcset'))
       preview0.setAttribute('sizes', img0.getAttribute('data-sizes'))
       listModal[id].setAttribute('aria-hidden', 'false')
       listModal[id].style.display = 'block'
@@ -45,14 +45,14 @@ function modal() {
       let croixModal = listModal[id].getElementsByClassName('close')
       arrCroix = croixModal
 
-      for (croix of arrCroix) {
+      for (const croix of arrCroix) {
         croix.onclick = () => { listModal[id].style.display = 'none' }
       }
       let arrBtn = []
       let btnModal = listModal[id].getElementsByClassName('btn-modal')
       arrBtn = btnModal
 
-      for (btn of arrBtn) {
+      for (const btn of arrBtn) {
         btn.onclick = () => { listModal[id].style.display = 'none' }
       }
     }
