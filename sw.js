@@ -1,67 +1,21 @@
 //This is the service worker with the Advanced caching
-const CACHE = 'cache-v2';
+// Nom derive du CONTENU du build, injecte par ServiceWorkerBuildPlugin.
+// Il change des qu'un fichier emis change : c'est ce changement qui declenche
+// l'installation d'un nouveau service worker, donc la mise a jour du cache.
+const CACHE = 'cache-__BUILD_ID__';
 const debug = false;
 
-const precacheFiles = [
-  "/",
-  "/index.html",
-  "/dev.html",
-  "/pro.html",
-  "/chain.html",
-  "/font/lato-v16-latin-regular.65e877e527022735c1a1bf5ae6183cf6.woff2",
-  "/img/palmier-mer_800w600h.webp",
-  "/assets/click-icon.a8c189945d96ac07bed3d57bbe52c527.svg",
-  "/assets/eye-icon.6d3ad58f3eedbf4a97d10d70a9bd85c5.svg",
-  "/assets/home-icon.44f5892fdfcdf7451d018d5a159ac0c3.svg",
-  "/assets/QRCode_CVdev_120w.b1235f335bbb546a2f7298f39ef9e292.svg",
-  "/assets/QRCode_CVpro_120w.53ceccfdee2fcf764828610d495ec8e7.svg",
-  "/assets/user.53d0d62cc1068ce7706cba94f4857ee2.svg",
-  "/favicons/android-icon-36x36.png",
-  "/favicons/android-icon-48x48.png",
-  "/favicons/android-icon-72x72.png",
-  "/favicons/android-icon-96x96.png",
-  "/favicons/android-icon-192x192.png",
-  "/favicons/android-icon-512x512.png",
-  "/favicons/apple-icon-57x57.png",
-  "/favicons/apple-icon-60x60.png",
-  "/favicons/apple-icon-72x72.png",
-  "/favicons/apple-icon-76x76.png",
-  "/favicons/apple-icon-96x96.png",
-  "/favicons/apple-icon-114x114.png",
-  "/favicons/apple-icon-120x120.png",
-  "/favicons/apple-icon-144x144.png",
-  "/favicons/apple-icon-152x152.png",
-  "/favicons/apple-icon-180x180.png",
-  "/favicons/apple-icon-precomposed.png",
-  "/favicons/apple-icon.png",
-  "/favicons/apple-touch-icon-ipad.png",
-  "/favicons/apple-touch-icon-iphone4.png",
-  "/favicons/favicon-16x16.png",
-  "/favicons/favicon-32x32.png",
-  "/favicons/favicon-96x96.png",
-  "/favicons/ms-icon-70x70.png",
-  "/favicons/ms-icon-144x144.png",
-  "/favicons/ms-icon-150x150.png",
-  "/favicons/ms-icon-310x310.png",
-  "/favicons/safari-pinned-tab.svg",
-  "/offline.html",
-  "/404.html",
-  "/runtime.372680f0fbaf8cc9549a.js",
-  "/main.944f7ddde88db7b709a0.js",
-  "/main.8d01054ee6dbd0079f2c.css",
-  "/android-icon-144x144.png",
-  "/apple-touch-icon.png",
-  "/browserconfig.xml",
-  "/favicon.ico",
-  "/manifest.json",
-  "/sw.js",
-];
+// Liste generee au build depuis les assets REELLEMENT emis (jamais a la main :
+// les noms portent un contenthash et changent a chaque compilation).
+const precacheFiles = __PRECACHE__;
 
 const offlineFallbackPage = '/offline.html';
 
 const networkFirstPaths = [
-  /* Add an array of regex of paths that should go network first */
-  // Example: /\/api\/.*/
+  // Les PAGES vont au reseau d'abord, le cache ne sert que de repli hors-ligne.
+  // Sans ca, une nouvelle mise en ligne n'est visible qu'a la DEUXIEME visite.
+  /^https?:\/\/[^/]+\/(\?.*)?$/,   // la racine
+  /\.html(\?.*)?$/,                 // index, dev, chain, pro, offline, 404
 ];
 
 const avoidCachingPaths = [
@@ -114,7 +68,22 @@ self.addEventListener('install', function (event) {
 self.addEventListener('activate', function (event) {
   if (debug)
     console.log('[PWA Builder] Claiming clients for current page');
-  event.waitUntil(self.clients.claim());
+
+  // Purge : tout cache dont le nom differe du CACHE courant appartient a un build
+  // precedent. Sans cette etape on empile un cache complet par version livree.
+  event.waitUntil(
+    caches.keys()
+      .then(function (noms) {
+        return Promise.all(
+          noms.filter(function (nom) { return nom !== CACHE; })
+              .map(function (nom) {
+                if (debug) console.log('[PWA Builder] Suppression du cache obsolete ' + nom);
+                return caches.delete(nom);
+              })
+        );
+      })
+      .then(function () { return self.clients.claim(); })
+  );
 });
 
 // If any fetch fails, it will look for the request in the cache and serve it from there first
@@ -188,7 +157,13 @@ function networkFirstFetch(event) {
       .catch(function (error) {
         if (debug)
           console.log('[PWA Builder] Network request Failed. Serving content from cache: ' + error);
-        return fromCache(event.request);
+        // Repli : la page en cache si on l'a, sinon la page hors-ligne pour une navigation.
+        return fromCache(event.request).catch(function () {
+          if (event.request.mode === 'navigate') {
+            return caches.open(CACHE).then(function (cache) { return cache.match(offlineFallbackPage); });
+          }
+          return Response.error();
+        });
       })
   );
 }

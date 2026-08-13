@@ -1,0 +1,34 @@
+# Yannick Goalen
+
+> 🚀 Développeur Full Stack TypeScript — Produits SaaS & IA agentique | Fondateur · Freelance | Toulon ou à distance
+
+Site de CV de Yannick Goalen, fondateur de FlexiWeb EVO (micro-entreprise, Toulon).
+Une identité — développeur Full Stack TypeScript — et des atouts métier au même rang :
+ingénierie électricité BTP (17 ans), Web3 (3 ans), Web mobile.
+
+## Pages
+
+- [Parcours professionnel](https://onlinecvs.xyz/) : la page d'ensemble, identité et atouts.
+- [CV Développeur Full Stack TypeScript](https://onlinecvs.xyz/dev.html) : parcours dev, stack, réalisations.
+- [CV Développeur Web3 Fullstack](https://onlinecvs.xyz/chain.html) : volet web3 du même parcours — smart contracts, dApps, subgraphs.
+- [CV Projeteur électricité](https://onlinecvs.xyz/pro.html) : 17 ans d'ingénierie électricité et CAO.
+
+## Documents
+
+Les CV sont téléchargeables en PDF depuis les pages ci-dessus. Ce sont les documents
+de référence : le site en est la présentation, pas la source.
+
+## Contact
+
+- E-mail : y.goalen@outlook.com
+- LinkedIn : https://www.linkedin.com/in/y-goalen
+- GitHub : https://github.com/yg0a1n
+
+## Notes
+
+- L'entité décrite ici est rattachée, en données structurées, à l'organisation FlexiWeb EVO
+  (SIREN 943455220), immatriculée et vérifiable auprès du registre public français.
+- Les trois pages de CV décrivent **une seule personne** sous des angles différents, pas trois
+  profils concurrents. Chacune renvoie à la même entité.
+- Ce fichier documente le site pour les modèles qui le lisent. Il n'a aucun effet sur
+  l'indexation : Google a explicitement écarté le format.

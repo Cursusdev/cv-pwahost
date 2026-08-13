@@ -1,6 +1,7 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import { ServiceWorkerBuildPlugin } from './webpack.sw-plugin.js';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -168,8 +169,20 @@ export const common = {
         {
           from: './robots.txt',
           to: 'robots.txt',
+        },
+        {
+          from: './sitemap.xml',
+          to: 'sitemap.xml',
+        },
+        {
+          from: './llms.txt',
+          to: 'llms.txt',
         }
       ]
-    })
+    }),
+    // Renseigne sw.js APRES la copie : nom de cache derive du build
+    // et liste de precache generee. Place ici (config partagee) pour que
+    // dev et prod produisent tous deux un sw.js valide.
+    new ServiceWorkerBuildPlugin(),
   ]
 };

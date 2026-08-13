@@ -1,2 +1,26 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Crawlers des moteurs génératifs, autorisés nommément.
+# Ils passeraient déjà par la règle générale : les nommer lève l'ambiguïté
+# et documente l'intention. Google-Extended ne concerne que l'entraînement
+# de Gemini — l'indexation Google Search passe par Googlebot.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://onlinecvs.xyz/sitemap.xml
